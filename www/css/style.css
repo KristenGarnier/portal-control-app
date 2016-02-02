@@ -1,0 +1,52 @@
+footer {
+    position:fixed;
+    left:0px;
+    bottom:0px;
+    width:100%;
+    text-align: center;
+    background: white;
+    border-top: solid 2px #2BA6CB;
+    color: #2BA6CB;
+}
+
+footer i {
+    padding: 1rem 0;
+    font-size: 1.5rem !important;
+}
+
+.top-bar{
+    padding: 1.2rem 0 1rem 0;
+    text-align: center;
+    text-transform: uppercase;
+
+    margin-bottom: 5rem;
+}
+
+.top-bar h1 {
+    font-size: 1.3em;
+}
+
+button {
+    text-transform: uppercase;
+}
+
+button:focus{
+    outline: none;
+}
+
+form{
+    width: 90%;
+    margin: auto;
+}
+
+body{
+    margin-bottom: 50px;
+}
+
+#h button{
+    margin-bottom: 3rem;
+}
+
+#h button:last-child{
+    margin-bottom: 0;
+}

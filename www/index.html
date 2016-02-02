@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+<head>
+    <!--
+    Customize this policy to fit your own app's needs. For more guidance, see:
+        https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+    Some notes:
+        * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+        * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+        * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+            * Enable inline JS: add 'unsafe-inline' to default-src
+    -->
+    <meta http-equiv="Content-Security-Policy"
+          content="connect-src 'self' *">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport"
+          content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <link rel="stylesheet" href="css/foundation.css">
+    <link rel="stylesheet" href="css/sweetalert.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Hello World</title>
+</head>
+<body>
+
+<div class="top-bar">
+    <h1>Garage app</h1>
+</div>
+
+<div id="app">
+</div>
+<footer>
+    <div class="row">
+        <div class="small-6 columns">
+            <i class="fa fa-cog" id="switch"></i>
+
+        </div>
+        <div class="small-6 columns">
+            <i id="sauvegarde" class="fa fa-floppy-o"></i>
+        </div>
+    </div>
+
+</footer>
+
+<script id="home" type="text/x-handlebars-template">
+    <div id="h">
+        {{#each buttons}}
+        {{#if active}}
+        <button class="expanded button large" data-link="{{link}}">{{text}}</button>
+        {{/if}}
+        {{/each}}
+    </div>
+</script>
+
+<script id="modify" type="text/x-handlebars-template">
+    <form>
+        <h1>Modifications boutons</h1>
+        <div class="row">
+            <div>
+                <label for="1_text">Texte du boutton 1</label>
+                <input name="1_text" type="text" id="1_text" value="{{#if buttons.0.text }}{{buttons.0.text}}{{/if}}"/>
+
+                <label for="1_link">Lien du bouton 1</label>
+                <input name="1_link" type="text" id="1_link" value="{{#if buttons.0.link }}{{buttons.0.link}}{{/if}}"/>
+
+                <div class="row">
+                    <div class="small-9 columns">
+                        <label for="activeSwith1" class="text-right middle">Activer le bouton</label>
+                    </div>
+                    <div class="small-3 columns">
+                        <div class="switch">
+                            <input class="switch-input" id="activeSwith1" type="checkbox" name="1_active" {{#if
+                                   buttons.0.active }}checked{{/if}}>
+                            <label class="switch-paddle" for="activeSwith1">
+                                <span class="show-for-sr">Activer / Désactiiver le bouton</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div>
+                <label for="2_text">Texte du boutton 2</label>
+                <input name="2_text" type="text" id="2_text" value="{{#if buttons.1.text }}{{buttons.1.text}}{{/if}}"/>
+
+                <label for="2_link">Lien du bouton 2</label>
+                <input name="2_link" type="text" id="2_link" value="{{#if buttons.1.link }}{{buttons.1.link}}{{/if}}"/>
+
+                <div class="row">
+                    <div class="small-9 columns">
+                        <label for="activeSwith2" class="text-right middle">Activer le bouton</label>
+                    </div>
+                    <div class="small-3 columns">
+                        <div class="switch">
+                            <input class="switch-input" id="activeSwith2" type="checkbox" name="2_active" {{#if
+                                   buttons.1.active }}checked{{/if}}>
+                            <label class="switch-paddle" for="activeSwith2">
+                                <span class="show-for-sr">Activer / Désactiiver le bouton</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div>
+                <label for="3_text">Texte du boutton 3</label>
+                <input name="3_text" type="text" id="3_text" value="{{#if buttons.2.text }}{{buttons.2.text}}{{/if}}"/>
+
+                <label for="3_link">Lien du bouton 3</label>
+                <input name="3_link" type="text" id="3_link" value="{{#if buttons.2.link }}{{buttons.2.link}}{{/if}}"/>
+
+                <div class="row">
+                    <div class="small-9 columns">
+                        <label for="activeSwith3" class="text-right middle">Activer le bouton</label>
+                    </div>
+                    <div class="small-3 columns">
+                        <div class="switch">
+                            <input class="switch-input" id="activeSwith3" type="checkbox" name="3_active" {{#if
+                                   buttons.2.active }}checked{{/if}}>
+                            <label class="switch-paddle" for="activeSwith3">
+                                <span class="show-for-sr">Activer / Désactiiver le bouton</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </form>
+</script>
+
+<script type="text/javascript" src="js/handlebars-v4.0.5.js"></script>
+<script type="text/javascript" src="js/jquery-2.2.0.min.js"></script>
+<script type="text/javascript" src="js/sweetalert.min.js"></script>
+<script type="text/javascript" src="js/foundation.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+</body>
+</html>
