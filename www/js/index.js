@@ -17,6 +17,8 @@
  * under the License.
  */
 
+window.jQuery = window.$ = require("jquery");
+
 'use strict';
 
 var app = {
