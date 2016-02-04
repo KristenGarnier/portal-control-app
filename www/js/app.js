@@ -83,18 +83,25 @@
 	    // Update DOM on a Received Event
 	    receivedEvent: __webpack_require__(34),
 
+	    // template selector
 	    changeView: __webpack_require__(35),
 
+	    // Save user date
 	    saveData: __webpack_require__(36),
 
+	    // Make request to the provided link
 	    makeRequest: __webpack_require__(37),
 
+	    //Success handler for request
 	    successfull: __webpack_require__(38),
 
+	    // Error handler for request
 	    errorish: __webpack_require__(48),
 
+	    // Method used to render the template and create new watchers
 	    render: __webpack_require__(49),
 
+	    // unwatch buttons to not have multiple watchers for this
 	    resetBinding: function () {
 	        $('button').unbind("click");
 	    }

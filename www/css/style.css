@@ -5,25 +5,41 @@ footer {
     width:100%;
     text-align: center;
     background: white;
-    border-top: solid 2px #2BA6CB;
+    border-top: solid 2px #624996;
     color: #2BA6CB;
 }
 
 footer i {
+    color: #624996;
     padding: 1rem 0;
     font-size: 1.5rem !important;
 }
 
 .top-bar{
+    position:fixed;
+    left:0px;
+    top:0px;
+    width:100%;
+    z-index: 1000;
     padding: 1.2rem 0 1rem 0;
     text-align: center;
     text-transform: uppercase;
+    background-color: #4e4080;
+    border-bottom: 2px solid #624996;
 
     margin-bottom: 5rem;
 }
 
 .top-bar h1 {
     font-size: 1.3em;
+    color: white;
+    display: inline-block;
+}
+
+.top-bar img {
+    display: inline-block;
+    margin-right: 1rem;
+    margin-top: -7px;
 }
 
 button {
@@ -40,13 +56,20 @@ form{
 }
 
 body{
-    margin-bottom: 50px;
+    padding: 15vh 0;
 }
 
 #h button{
+    background-color: #624996;
+    width: 90%;
+    margin: auto;
     margin-bottom: 3rem;
 }
 
 #h button:last-child{
     margin-bottom: 0;
+}
+
+input:checked ~ .switch-paddle {
+    background-color: #624996;
 }

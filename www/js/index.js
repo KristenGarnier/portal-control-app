@@ -37,18 +37,25 @@ var app = {
     // Update DOM on a Received Event
     receivedEvent: require('./modules/receivedEvent'),
 
+    // template selector
     changeView: require('./modules/changeView'),
 
+    // Save user date
     saveData: require('./modules/saveData'),
 
+    // Make request to the provided link
     makeRequest: require('./modules/makeRequest'),
 
+    //Success handler for request
     successfull: require('./modules/successfull'),
 
+    // Error handler for request
     errorish: require('./modules/errorish'),
 
+    // Method used to render the template and create new watchers
     render: require('./modules/render'),
 
+    // unwatch buttons to not have multiple watchers for this
     resetBinding: function () {
         $('button').unbind("click");
     }
