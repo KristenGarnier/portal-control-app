@@ -5035,7 +5035,6 @@
 
 	module.exports = function (e) {
 	    if (typeof fetch != 'function') {
-	        console.log('superagent relay !');
 	        request
 	            .get($(e.target).data('link'))
 	        .end(function(err, res){
