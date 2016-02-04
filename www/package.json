@@ -1,0 +1,21 @@
+{
+  "name": "www",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.4.5",
+    "webpack": "^1.12.12"
+  },
+  "dependencies": {
+    "fs": "0.0.2",
+    "handlebars": "^4.0.5",
+    "superagent": "^1.7.2",
+    "sweetalert": "^1.1.3"
+  }
+}
