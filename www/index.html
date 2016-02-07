@@ -30,6 +30,7 @@
     -->
     <meta http-equiv="Content-Security-Policy"
           content="connect-src 'self' *">
+    <meta charset="utf-8">
     <meta name="format-detection" content="telephone=no">
     <meta name="msapplication-tap-highlight" content="no">
     <meta name="viewport"
@@ -69,6 +70,12 @@
         <button class="expanded button large" data-link="{{link}}">{{text}}</button>
         {{/if}}
         {{/each}}
+        {{#if empty}}
+        <div class="no-item">
+            <h2>Vous n'avez pas définit de boutons</h2>
+            <p>Les boutons que vous avez définit appraitrons ici</p>
+        </div>
+        {{/if}}
     </div>
 </script>
 
