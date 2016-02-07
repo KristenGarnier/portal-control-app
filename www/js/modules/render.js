@@ -23,6 +23,8 @@ module.exports = function (template) {
 };
 
 function buttonCheck(buttons){
+    if( buttons === null) return [];
+
     return buttons.filter(function(item){
         return 'active' in item;
     });

@@ -2,10 +2,6 @@ module.exports = function () {
     if ($('#h').length > 0) {
         this.render(this.templates.modify);
     } else {
-        if (JSON.parse(localStorage.getItem('urls')) === null) {
-            this.render(this.templates.modify);
-        } else {
-            this.render(this.templates.home);
-        }
+        this.render(this.templates.home);
     }
 };
