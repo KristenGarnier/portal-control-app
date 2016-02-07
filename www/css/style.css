@@ -1,3 +1,6 @@
+body {
+    min-height: 100vh;
+}
 footer {
     position:fixed;
     left:0px;
@@ -72,4 +75,23 @@ body{
 
 input:checked ~ .switch-paddle {
     background-color: #624996;
+}
+
+.no-item{
+    color: darkgrey;
+    text-align: center;
+    background-color: #f5f5f5;
+    padding: 3rem 1rem;
+    width: 90%;
+    margin: auto;
+    border-radius: 5px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+.no-item h2{
+    color: inherit;
+}
+
+button.button i {
+    position: absolute;
+    margin-left: 1rem;
 }

@@ -14,6 +14,8 @@
   },
   "dependencies": {
     "fs": "0.0.2",
+    "hammer-touchemulator": "0.0.2",
+    "hammerjs": "^2.0.6",
     "handlebars": "^4.0.5",
     "jquery": "^2.2.0",
     "superagent": "^1.7.2",
