@@ -1,15 +1,16 @@
 module.exports = function (template) {
     this.resetBinding();
+    var data = JSON.parse(localStorage.getItem('urls')), context;
     switch (template) {
         case this.templates.modify:
-            var context = {buttons: JSON.parse(localStorage.getItem('urls'))};
+            context = {buttons: data};
             this.container.html(this.templateModify(context));
             $('#switch').removeClass('fa-cog').addClass('fa-arrow-left');
             $('#sauvegarde').removeClass('hide');
             $('#sauvegarde').on('click', this.saveData);
             break;
         case this.templates.home:
-            var context = {buttons: JSON.parse(localStorage.getItem('urls'))};
+            context = {buttons: data, empty: buttonCheck(data).length <= 0};
             this.container.html(this.templateHome(context));
             $('#switch').removeClass('fa-arrow-left').addClass('fa-cog');
             $('#sauvegarde').addClass('hide');
@@ -20,3 +21,9 @@ module.exports = function (template) {
             break;
     }
 };
+
+function buttonCheck(buttons){
+    return buttons.filter(function(item){
+        return 'active' in item;
+    });
+}
